@@ -20,6 +20,9 @@ public class Tafel extends JDialog
     private JLabel aktuellerUser;
     private JButton messageBearbeitenButton;
     private JButton refreshButton;
+    private JTextArea childrenTextArea;
+    private JLabel Nachrichten;
+    private JLabel Children;
 
     public Tafel()
     {
@@ -72,9 +75,7 @@ public class Tafel extends JDialog
 
     private void onBearbeiten()
     {
-        // add your code here
         Bearbeitung bearbeitung = new Bearbeitung();
-        dispose();
     }
 
 }

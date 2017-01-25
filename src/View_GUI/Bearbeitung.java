@@ -3,13 +3,12 @@ package View_GUI;
 import Model_daten.*;
 
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 /**
  * Created by Amel on 24.01.2017.
  */
-public class Bearbeitung
+public class Bearbeitung extends JDialog
 {
 
     private JComboBox comboBox1;
@@ -19,21 +18,35 @@ public class Bearbeitung
     private JPanel bearbeitungPanel;
     private JTextArea nachrichtenArea;
 
+    JFrame frame = new JFrame("Bearbeitung");
 
     public Bearbeitung()
     {
         erstellen();
+
+        abbrechenButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                onAbbrechen();
+            }
+        });
+
     }
+
 
     public void erstellen()
     {
-        JFrame frame = new JFrame("Bearbeitung");
         frame.setContentPane(bearbeitungPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocation(800, 0);
         frame.pack();
         frame.setSize(700, 500);
         frame.setVisible(true);
+    }
+
+    private void onAbbrechen()
+    {
+        frame.dispose();
     }
 
 }
