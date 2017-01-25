@@ -8,6 +8,8 @@ import View_GUI.*;
 
 public class Start
 {
+    public String user;
+
     public static void main(String[] args)
     {
         boolean sichtbar = true;
@@ -15,7 +17,8 @@ public class Start
         Login loginView = new Login();
         loginView.sichtbar(sichtbar);
 
-        Tafel a = new Tafel();
-        a.sichtbar(sichtbar);
+       // Tafel a = new Tafel();
+        //a.sichtbar(sichtbar);
+
     }
 }

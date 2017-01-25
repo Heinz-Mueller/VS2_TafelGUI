@@ -5,9 +5,22 @@ package Model_daten;
  */
 public class ModelDaten
 {
-    public boolean writeUser(String user)
-    {
+    private String user;
 
-        return false;
+//    public boolean writeUser(String user)
+//    {
+//        user = user;
+//        return false;
+//    }
+
+    public void writeUser(String benutzer)
+    {
+        user = benutzer;
+        //notifyObservers();
+    }
+
+    public String getUser()
+    {
+        return user;
     }
 }

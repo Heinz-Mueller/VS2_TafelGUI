@@ -2,11 +2,14 @@ package View_GUI;
 
 import Model_daten.*;
 import javax.swing.*;
+import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Created by E.E on 10.01.2017.
  */
-public class Tafel extends javax.swing.JFrame
+public class Tafel extends JDialog
 {
     JFrame frame = new JFrame("Tafel");
     private JTextArea nachrichtenArea;
@@ -21,6 +24,31 @@ public class Tafel extends javax.swing.JFrame
     public Tafel()
     {
        erstellen();
+
+//        messageBearbeitenButton.addMouseListener(new MouseAdapter()
+//        {
+//            @Override
+//            public void mouseClicked(MouseEvent e)
+//            {
+//                Bearbeitung bearbeitung = new Bearbeitung();
+//            }
+//        });
+
+
+    }
+
+    public Tafel(String user)
+    {
+        erstellen();
+        aktuellerUser.setText(user);
+
+        messageBearbeitenButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                onBearbeiten();
+            }
+        });
     }
 
 
@@ -40,6 +68,13 @@ public class Tafel extends javax.swing.JFrame
         {
             frame.setVisible(true);
         }
+    }
+
+    private void onBearbeiten()
+    {
+        // add your code here
+        Bearbeitung bearbeitung = new Bearbeitung();
+        dispose();
     }
 
 }

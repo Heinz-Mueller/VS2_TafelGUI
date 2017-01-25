@@ -7,14 +7,27 @@ import Model_daten.ModelDaten;
  */
 public class LoginController
 {
-    public boolean setUser(String user)
+    public void setUser(String user)
     {
         try
         {
             ModelDaten model = new ModelDaten();
-            return model.writeUser(user);
+            model.writeUser(user);
+            //return model.writeUser(user);
         } catch (Exception er) {
-            return false;
+            //return false;
         }
     }
+
+    public String getUser()
+    {
+        try
+        {
+            ModelDaten model = new ModelDaten();
+            return model.getUser();
+        } catch (Exception er) {
+            return "Fehler aufgetreten.";
+        }
+    }
+
 }

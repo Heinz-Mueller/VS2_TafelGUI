@@ -19,6 +19,8 @@ public class Login extends javax.swing.JFrame
     JButton m_setButton;
     JLabel m_errorLabel;
 
+    public String user;
+
     // Create the class for the Controller
     private LoginController controller = new LoginController();
 
@@ -64,9 +66,16 @@ public class Login extends javax.swing.JFrame
         m_setButton.addActionListener (new ActionListener(){
             public void actionPerformed (ActionEvent e)
             {
-                String user = userTextFeld.getText();
+                user = userTextFeld.getText();
                 System.out.println(user);
+                //Controller benachrichtigen, noch nicht umgesetzt
                 controller.setUser(user);
+
+                //Sobald eingeloggt schließt das Fesnter
+                m_viewFrame.setVisible(false);
+
+                Tafel b = new Tafel(user);
+                b.sichtbar(true);
             }
         });
 
@@ -93,5 +102,6 @@ public class Login extends javax.swing.JFrame
             m_viewFrame.setVisible(true);
         }
     }
+
 
 }

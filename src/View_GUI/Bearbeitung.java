@@ -1,6 +1,6 @@
 package View_GUI;
 
-//import Model_daten.*;
+import Model_daten.*;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -23,15 +23,6 @@ public class Bearbeitung
     public Bearbeitung()
     {
         erstellen();
-
-        ändernButton.addMouseListener(new MouseAdapter()
-        {
-            @Override
-            public void mouseClicked(MouseEvent e)
-            {
-                super.mouseClicked(e);
-            }
-        });
     }
 
     public void erstellen()
