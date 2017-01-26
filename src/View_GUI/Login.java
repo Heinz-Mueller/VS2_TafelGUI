@@ -95,12 +95,9 @@ public class Login extends javax.swing.JFrame
         //m_viewFrame.setVisible(true);
     }
 
-    public void sichtbar(boolean a)
+    public void sichtbar(boolean ja)
     {
-        if (a = true)
-        {
-            m_viewFrame.setVisible(true);
-        }
+            m_viewFrame.setVisible(ja);
     }
 
 

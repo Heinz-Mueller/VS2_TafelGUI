@@ -23,6 +23,7 @@ public class Tafel extends JDialog
     private JTextArea childrenTextArea;
     private JLabel Nachrichten;
     private JLabel Children;
+    private JButton logoutButton;
 
     public Tafel()
     {
@@ -52,6 +53,13 @@ public class Tafel extends JDialog
                 onBearbeiten();
             }
         });
+        logoutButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                onLogout();
+            }
+        });
     }
 
 
@@ -65,17 +73,26 @@ public class Tafel extends JDialog
         //frame.setVisible(true);
     }
 
-    public void sichtbar(boolean a)
+    public void sichtbar(boolean ja)
     {
-        if (a = true)
-        {
-            frame.setVisible(true);
-        }
+            frame.setVisible(ja);
     }
 
     private void onBearbeiten()
     {
         Bearbeitung bearbeitung = new Bearbeitung();
+    }
+
+    private void onLogout()
+    {
+        onAbbrechen();
+        Login login = new Login();
+        login.sichtbar(true);
+    }
+
+    private void onAbbrechen()
+    {
+        frame.dispose();
     }
 
 }
